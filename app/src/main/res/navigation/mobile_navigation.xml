@@ -7,9 +7,14 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.example.taskmanager.ui.home.HomeFragment"
+        android:name="com.example.bottomnavigationwork.ui.home.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_onBoardingFragment"
+            app:destination="@id/onBoardingFragment"
+            app:popUpTo="@+id/mobile_navigation"
+            app:popUpToInclusive="true" />
     </fragment>
 
     <fragment
@@ -25,12 +30,23 @@
         tools:layout="@layout/fragment_notifications" />
     <fragment
         android:id="@+id/taskFragment"
-        android:name="com.example.taskmanager.ui.task.TaskFragment"
-        android:label="fragment_task"
+        android:name="com.example.tas"
+        android:label="Task"
         tools:layout="@layout/fragment_task" />
     <fragment
-        android:id="@+id/navigation_profile"
-        android:name="com.example.taskmanager.ProfileFragment"
-        android:label="fragment_profile"
+        android:id="@+id/profileFragment"
+        android:name="com.example.tas"
+        android:label="Profile"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/onBoardingFragment"
+        android:name="com.example.taskmanager.ui.onBoard.OnBoardingFragment"
+        android:label="fragment_on_boarding"
+        tools:layout="@layout/fragment_on_boarding" >
+        <action
+            android:id="@+id/action_onBoardingFragment_to_navigation_home"
+            app:destination="@id/navigation_home"
+            app:popUpTo="@+id/mobile_navigation"
+            app:popUpToInclusive="true"/>
+    </fragment>
 </navigation>
